@@ -1,15 +1,18 @@
 package com.tecsup.petclinic.util;
 
 import com.tecsup.petclinic.dtos.PetDTO;
+import com.tecsup.petclinic.dtos.VisitDTO;
 import com.tecsup.petclinic.entities.Pet;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TObjectCreator {
 
 	public static Pet getPet() {
-		return new Pet(1,"Leo",1,1, null);
+		return new Pet(1,"Leo",1,1, null, null);
 	}
 
 	public static Pet newPet() {
@@ -42,7 +45,7 @@ public class TObjectCreator {
 
 
 	public static Pet newPetForUpdate() {
-		return new Pet(0,"Bear",1,1,null);
+		return new Pet(0,"Bear",1,1,null, null);
 	}
 
 	public static Pet newPetCreatedForUpdate() {
@@ -52,7 +55,7 @@ public class TObjectCreator {
 	}
 
 	public static Pet newPetForDelete() {
-		return new Pet(0,"Bird",1,1, null);
+		return new Pet(0,"Bird",1,1, null, null);
 	}
 
 	public static Pet newPetCreatedForDelete() {
@@ -63,21 +66,35 @@ public class TObjectCreator {
 
 	public static List<Pet> getPetsForFindByName() {
 		List<Pet> pets  = new ArrayList<Pet>();
-		pets.add(new Pet(1,"Leo",1,1, null));
+		pets.add(new Pet(1,"Leo",1,1, null, null));
 		return pets;
 	}
 
 	public static List<Pet> getPetsForFindByTypeId() {
 		List<Pet> pets  = new ArrayList<Pet>();
-		pets.add(new Pet(9,"Lucky",5,7, null));
-		pets.add(new Pet(11,"Freddy",5,9, null));
+		pets.add(new Pet(9,"Lucky",5,7, null, null));
+		pets.add(new Pet(11,"Freddy",5,9, null, null));
 		return pets;
 	}
 
 	public static List<Pet> getPetsForFindByOwnerId() {
 		List<Pet> pets  = new ArrayList<Pet>();
-		pets.add(new Pet(12,"Lucky",2,10, null));
-		pets.add(new Pet(13,"Sly",1,10, null));
+		pets.add(new Pet(12,"Lucky",2,10, null, null));
+		pets.add(new Pet(13,"Sly",1,10, null, null));
 		return pets;
+	}
+
+	public static List<VisitDTO> getVisitsForFindByPetId() {
+		List<VisitDTO> visits = new ArrayList<VisitDTO>();
+		visits.add(new VisitDTO(1, 7, 2, LocalDate.of(2010, 3, 4), "rabies shot", new BigDecimal("45.00")));
+		visits.add(new VisitDTO(4, 7, 3, LocalDate.of(2008, 9, 4), "spayed", new BigDecimal("275.00")));
+		return visits;
+	}
+
+	public static List<VisitDTO> getVisitsForFindByVetId() {
+		List<VisitDTO> visits = new ArrayList<VisitDTO>();
+		visits.add(new VisitDTO(1, 7, 2, LocalDate.of(2010, 3, 4), "rabies shot", new BigDecimal("45.00")));
+		visits.add(new VisitDTO(2, 8, 2, LocalDate.of(2011, 3, 4), "rabies shot", new BigDecimal("45.00")));
+		return visits;
 	}
 }
