@@ -1,18 +1,28 @@
 package com.tecsup.petclinic.webs;
 
 import com.tecsup.petclinic.dtos.VisitDTO;
+<<<<<<< HEAD
+=======
+import com.tecsup.petclinic.exceptions.VisitNotFoundException;
+>>>>>>> Fernando
 import com.tecsup.petclinic.services.VisitService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
+=======
+import org.springframework.web.bind.annotation.RestController;
+
+>>>>>>> Fernando
 import java.util.List;
 
 @RestController
 public class VisitController {
+<<<<<<< HEAD
 
     private final VisitService visitService;
 
@@ -37,4 +47,25 @@ public class VisitController {
         BigDecimal totalCost = visitService.calculateTotalCostByPet(id);
         return ResponseEntity.ok(totalCost);
     }
+=======
+	private final VisitService visitService;
+
+	public VisitController(VisitService visitService) {
+		this.visitService = visitService;
+	}
+
+	@GetMapping("/visits")
+	public ResponseEntity<List<VisitDTO>> findAllVisits() {
+		return ResponseEntity.ok(visitService.findAll());
+	}
+
+	@GetMapping("/visits/{id}")
+	public ResponseEntity<VisitDTO> findById(@PathVariable Long id) {
+		try {
+			return ResponseEntity.ok(visitService.findById(id));
+		} catch (VisitNotFoundException e) {
+			return ResponseEntity.notFound().build();
+		}
+	}
+>>>>>>> Fernando
 }
