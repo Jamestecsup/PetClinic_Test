@@ -86,15 +86,15 @@ public class TObjectCreator {
 
 	public static List<VisitDTO> getVisitsForFindByPetId() {
 		List<VisitDTO> visits = new ArrayList<VisitDTO>();
-		visits.add(new VisitDTO(1, 7, 2, LocalDate.of(2010, 3, 4), "rabies shot", new BigDecimal("45.00")));
-		visits.add(new VisitDTO(4, 7, 3, LocalDate.of(2008, 9, 4), "spayed", new BigDecimal("275.00")));
+		visits.add(new VisitDTO(1L, 7, 2, LocalDate.of(2010, 3, 4), "rabies shot", new BigDecimal("45.00")));
+		visits.add(new VisitDTO(4L, 7, 3, LocalDate.of(2008, 9, 4), "spayed", new BigDecimal("275.00")));
 		return visits;
 	}
 
 	public static List<VisitDTO> getVisitsForFindByVetId() {
 		List<VisitDTO> visits = new ArrayList<VisitDTO>();
-		visits.add(new VisitDTO(1, 7, 2, LocalDate.of(2010, 3, 4), "rabies shot", new BigDecimal("45.00")));
-		visits.add(new VisitDTO(2, 8, 2, LocalDate.of(2011, 3, 4), "rabies shot", new BigDecimal("45.00")));
+		visits.add(new VisitDTO(1L, 7, 2, LocalDate.of(2010, 3, 4), "rabies shot", new BigDecimal("45.00")));
+		visits.add(new VisitDTO(2L, 8, 2, LocalDate.of(2011, 3, 4), "rabies shot", new BigDecimal("45.00")));
 		return visits;
 	}
 }
