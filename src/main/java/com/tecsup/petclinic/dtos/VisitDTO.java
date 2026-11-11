@@ -8,20 +8,6 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-<<<<<<< HEAD
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-public class VisitDTO {
-
-    private Integer id;
-    private Integer petId;
-    private Integer vetId;
-    private LocalDate visitDate;
-    private String description;
-    private BigDecimal cost;
-=======
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -33,5 +19,4 @@ public class VisitDTO {
 	private LocalDate visitDate;
 	private String description;
 	private BigDecimal cost;
->>>>>>> Fernando
 }

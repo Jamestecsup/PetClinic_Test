@@ -41,14 +41,9 @@ public class Pet {
 	private Date birthDate;
 
 
-<<<<<<< HEAD
-	@Transient
-	@ToString.Exclude
-=======
 	@OneToMany(mappedBy = "pet", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@ToString.Exclude
 	//@EqualsAndHashCode.Exclude
->>>>>>> Fernando
 	private Set<Visit> visits;
 
 //	@ManyToOne(fetch = FetchType.LAZY)
@@ -61,8 +56,4 @@ public class Pet {
 //	@ToString.Exclude
 //	private Owner owner;
 
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> Fernando
